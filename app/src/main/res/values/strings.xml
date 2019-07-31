@@ -6,4 +6,5 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="informe_seu_nome">Informe seu nome:</string>
     <string name="salvar">Salvar</string>
+    <string name="informe_nome">Por favor, informe seu nome.</string>
 </resources>
