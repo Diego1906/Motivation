@@ -21,12 +21,17 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         mSecurity = SecurityPreferences(this)
 
         buttonSave.setOnClickListener(this)
+        verifyUserName()
     }
 
     override fun onClick(view: View?) {
         val id = view?.id
         if (id == R.id.buttonSave)
             handleSave()
+    }
+
+    private fun verifyUserName(){
+        editName.setText(mSecurity.getStoreString(MotivationConstants.KEY.PERSON_NAME))
     }
 
     private fun handleSave() {

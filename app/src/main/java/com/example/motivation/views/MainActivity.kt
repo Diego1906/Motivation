@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import com.example.motivation.R
+import com.example.motivation.mock.Mock
 import com.example.motivation.util.MotivationConstants
 import com.example.motivation.util.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,8 +13,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mFilter = MotivationConstants.PHRASE_FILTER.ALL
-
     private lateinit var mSecurityPreferences: SecurityPreferences
+    private val mMock = Mock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Inicializa
         handleFilter(R.id.imageAll)
 
-        setUserName()
+        verifyUserName()
+    }
+
+    private fun setListeners() {
+        imageAll.setOnClickListener(this)
+        imageSun.setOnClickListener(this)
+        imageHappy.setOnClickListener(this)
+
+        buttonNewPhrase.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -38,25 +47,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.imageAll, R.id.imageSun, R.id.imageHappy -> {
                 handleFilter(id)
             }
-            else -> {
+            R.id.buttonNewPhrase -> {
                 refreshPhrase()
             }
         }
-    }
-
-    private fun setUserName() {
-        textUserName.text = "Olá, ${mSecurityPreferences.getStoreString(MotivationConstants.KEY.PERSON_NAME)}"
-    }
-
-//    private fun setPhrase() {
-//        textPhrase.text =
-//    }
-
-    private fun setListeners() {
-        imageAll.setOnClickListener(this)
-        imageSun.setOnClickListener(this)
-        imageHappy.setOnClickListener(this)
-        buttonNewPhrase.setOnClickListener(this)
     }
 
     private fun handleFilter(id: Int) {
@@ -78,11 +72,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 refreshImage(imageHappy, R.drawable.ic_happy_selected)
             }
         }
+        refreshPhrase()
     }
 
     private fun refreshImage(imageView: ImageView, resourceId: Int) {
         imageView.setImageResource(resourceId)
     }
 
-    private fun refreshPhrase() {}
+    private fun refreshPhrase() {
+        val description = mMock.getPhrase(mFilter)
+        setPhrase(description)
+    }
+
+    private fun setPhrase(description: String) {
+        textPhrase.text = description
+    }
+
+    private fun verifyUserName() {
+        textUserName.text =
+            String.format("Olá, %s", mSecurityPreferences.getStoreString(MotivationConstants.KEY.PERSON_NAME))
+    }
 }
