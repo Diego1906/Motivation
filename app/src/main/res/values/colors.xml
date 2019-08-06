@@ -9,6 +9,6 @@
     <color name="colorTextButton">#ffffff</color>
     <color name="colorTextLightGray">#f9f9f9</color>
 
-    <color name="menuItemSelected">#def5f5</color>
-    <color name="menuItemUnselected">#b1b1b1</color>
+    <color name="menuItemSelected">#ffffff</color>
+    <color name="menuItemUnselected">#cecece</color>
 </resources>
