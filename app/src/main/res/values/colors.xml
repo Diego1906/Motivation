@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#0b121c</color>
+    <color name="colorPrimaryDark">#070b11</color>
+    <color name="colorAccent">#ffff</color>
 
     <color name="black_overlay">#66000000</color>
 
-    <color name="menuItemSelected">#E72828</color>
-    <color name="menuItemUnselected">#cecece</color>
+    <color name="menuItemSelected">#def5f5</color>
+    <color name="menuItemUnselected">#b1b1b1</color>
 </resources>

@@ -30,8 +30,12 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
             handleSave()
     }
 
-    private fun verifyUserName(){
-        editName.setText(mSecurity.getStoreString(MotivationConstants.KEY.PERSON_NAME))
+    private fun verifyUserName() {
+        val userName = mSecurity.getStoreString(MotivationConstants.KEY.PERSON_NAME)
+        if (!userName.isNullOrEmpty()) {
+            startActivity()
+        }
+        editName.setText(userName)
     }
 
     private fun handleSave() {
@@ -42,7 +46,11 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             mSecurity.storeString(MotivationConstants.KEY.PERSON_NAME, name)
 
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity()
         }
+    }
+
+    private fun startActivity() {
+        startActivity(Intent(this, MainActivity::class.java))
     }
 }
