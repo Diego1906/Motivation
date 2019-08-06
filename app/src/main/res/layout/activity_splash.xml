@@ -43,10 +43,11 @@
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="@dimen/dimen_16dp"
         android:background="@color/colorAccent"
         android:text="@string/salvar"
+        android:textColor="@color/colorTextButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
