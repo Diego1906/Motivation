@@ -1,32 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintSplash"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.SplashActivity"
-    android:id="@+id/constraintSplash">
+    android:background="@drawable/bg_splash"
+    tools:context=".views.SplashActivity">
 
-    <EditText
-        android:id="@+id/editName"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageIcon"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint="@string/informe_seu_nome"
-        android:inputType="textCapWords"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/luz_128px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/salvar"
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:layout_marginBottom="329dp"
+        android:background="@drawable/line_et"
+        android:gravity="center"
+        android:hint="@string/qual_seu_nome"
+        android:inputType="textCapWords"
+        android:padding="16dp"
+        android:textColor="@color/colorTextLightGray"
+        android:textColorHint="@color/colorTextLightGray"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editName" />
+        app:layout_constraintTop_toBottomOf="@id/imageIcon" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginBottom="@dimen/dimen_16dp"
+        android:background="@color/colorAccent"
+        android:text="@string/salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

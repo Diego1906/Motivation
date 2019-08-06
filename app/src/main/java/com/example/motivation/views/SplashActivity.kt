@@ -42,7 +42,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         val name: String = editName.text.toString()
 
         if (name.isEmpty()) {
-            Snackbar.make(constraintSplash, getString(R.string.informe_nome), Snackbar.LENGTH_LONG).show()
+            Snackbar.make(constraintSplash, getString(R.string.informe_seu_nome), Snackbar.LENGTH_LONG).show()
         } else {
             mSecurity.storeString(MotivationConstants.KEY.PERSON_NAME, name)
 
