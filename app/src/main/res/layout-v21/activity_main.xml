@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,7 +22,6 @@
         android:layout_width="@dimen/dip_100"
         android:layout_height="@dimen/dip_50"
         android:layout_marginStart="@dimen/dip_16"
-        android:layout_marginLeft="@dimen/dip_16"
         android:layout_marginTop="@dimen/dip_8"
         android:layout_weight="1"
         android:elevation="@dimen/dip_2"
@@ -36,10 +34,8 @@
         android:layout_width="@dimen/dip_100"
         android:layout_height="@dimen/dip_50"
         android:layout_marginStart="@dimen/dip_8"
-        android:layout_marginLeft="@dimen/dip_8"
         android:layout_marginTop="@dimen/dip_8"
         android:layout_marginEnd="@dimen/dip_8"
-        android:layout_marginRight="@dimen/dip_8"
         android:layout_weight="1"
         android:elevation="@dimen/dip_2"
         android:src="@drawable/ic_happy_unselected"
@@ -53,11 +49,10 @@
         android:layout_height="@dimen/dip_50"
         android:layout_marginTop="@dimen/dip_8"
         android:layout_marginEnd="@dimen/dip_8"
-        android:layout_marginRight="@dimen/dip_8"
         android:layout_weight="1"
         android:elevation="@dimen/dip_2"
         android:src="@drawable/ic_sun_unselected"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -65,7 +60,6 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dip_0"
         android:layout_marginStart="@dimen/dip_16"
-        android:layout_marginLeft="@dimen/dip_16"
         android:layout_marginTop="@dimen/dip_24"
         android:text="@string/user"
         android:textColor="@color/colorTextLightGray"
@@ -78,10 +72,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dip_16"
-        android:layout_marginLeft="@dimen/dip_16"
         android:layout_marginTop="@dimen/dip_150"
         android:layout_marginEnd="@dimen/dip_16"
-        android:layout_marginRight="@dimen/dip_16"
         android:layout_marginBottom="@dimen/dip_80"
         android:gravity="center"
         android:text="@string/phrase"

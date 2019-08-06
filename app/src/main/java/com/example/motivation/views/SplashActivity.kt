@@ -12,16 +12,21 @@ import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var mSecurity: SecurityPreferences
+    private lateinit var mSecurityPreferences: SecurityPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        mSecurity = SecurityPreferences(this)
+        mSecurityPreferences = SecurityPreferences(this)
 
-        buttonSave.setOnClickListener(this)
+        setListeners()
+
         verifyUserName()
+    }
+
+    private fun setListeners() {
+        buttonSave.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
@@ -30,24 +35,24 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
             handleSave()
     }
 
-    private fun verifyUserName() {
-        val userName = mSecurity.getStoreString(MotivationConstants.KEY.PERSON_NAME)
-        if (!userName.isNullOrEmpty()) {
-            startActivity()
-        }
-        editName.setText(userName)
-    }
-
     private fun handleSave() {
         val name: String = editName.text.toString()
 
         if (name.isEmpty()) {
             Snackbar.make(constraintSplash, getString(R.string.informe_seu_nome), Snackbar.LENGTH_LONG).show()
         } else {
-            mSecurity.storeString(MotivationConstants.KEY.PERSON_NAME, name)
+            mSecurityPreferences.storeString(MotivationConstants.KEY.PERSON_NAME, name)
 
             startActivity()
         }
+    }
+
+    private fun verifyUserName() {
+        val userName = mSecurityPreferences.getStoreString(MotivationConstants.KEY.PERSON_NAME)
+        if (!userName.isNullOrEmpty()) {
+            startActivity()
+        }
+        editName.setText(userName)
     }
 
     private fun startActivity() {

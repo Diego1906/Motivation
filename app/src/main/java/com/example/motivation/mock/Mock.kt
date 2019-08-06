@@ -5,6 +5,7 @@ import java.util.*
 
 data class Phrase(val description: String, val category: Int)
 
+// Fun Extension Kotlin
 fun Int.random(): Int = Random().nextInt(this)
 
 class Mock {
@@ -23,7 +24,7 @@ class Mock {
         Phrase("A melhor maneira de prever o futuro é inventá-lo.", SUN),
         Phrase("Você perde todas as chances que não aproveita.", SUN),
         Phrase("Fracasso é o condimento que dá sabor ao sucesso.", SUN),
-        Phrase("Enquanto não tivermos comprometidos, haverá hisitação.", SUN),
+        Phrase("Enquanto não tivermos comprometidos, haverá hesitação.", SUN),
         Phrase("Se você não sabe onde quer ir, qualquer caminho serve.", SUN),
         Phrase("Se você acredita, faz toda a diferença.", SUN),
         Phrase("Riscos devem ser corridos, porque o maior perigo é não arriscar nada.", SUN)
